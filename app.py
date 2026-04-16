@@ -466,7 +466,7 @@ def model_comparison_fig(names, accs, precs, recs, f1s):
 #  SIDEBAR
 # ════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.markdown("## SCM Assist")
+    st.markdown("## Supply Chain Management Late Delivery Prediction")
     st.markdown("---")
 
     st.markdown("### 📂 Data Source")
