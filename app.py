@@ -466,7 +466,7 @@ def model_comparison_fig(names, accs, precs, recs, f1s):
 #  SIDEBAR
 # ════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.markdown("## 🚚 Supply Chain Hub")
+    st.markdown("## SCM Assist")
     st.markdown("---")
 
     st.markdown("### 📂 Data Source")
@@ -491,11 +491,11 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### 📌 Navigation")
     st.markdown("""
-- 🏠 **Overview** – KPIs & project summary  
-- 🔍 **EDA** – Charts & distributions  
-- 🤖 **ML Models** – RF & XGBoost outputs  
-- 🏭 **Suppliers** – Reliability dashboard  
-- 🔮 **Predict** – Single shipment check  
+-  **Overview** – KPIs & project summary  
+-  **EDA** – Charts & distributions  
+-  **ML Models** – RF & XGBoost outputs  
+-  **Suppliers** – Reliability dashboard  
+-  **Predict** – Single shipment check  
     """)
 
     st.markdown("---")
@@ -516,14 +516,14 @@ def load_uploaded(file_bytes, fname):
 if uploaded_file is not None:
     try:
         raw_df = load_uploaded(uploaded_file.read(), uploaded_file.name)
-        data_label = f"📤 Uploaded: `{uploaded_file.name}`"
+        data_label = f" Uploaded: `{uploaded_file.name}`"
     except Exception as e:
         st.error(f"Error reading file: {e}")
         raw_df = generate_synthetic_data()
-        data_label = "📊 Built-in Demo Data (DataCo Supply Chain)"
+        data_label = " Built-in Demo Data (DataCo Supply Chain)"
 else:
     raw_df = generate_synthetic_data()
-    data_label = "📊 Built-in Demo Data (DataCo Supply Chain)"
+    data_label = " Built-in Demo Data (DataCo Supply Chain)"
 
 
 # ════════════════════════════════════════════════════════════
@@ -531,7 +531,7 @@ else:
 # ════════════════════════════════════════════════════════════
 st.markdown(f"""
 <div class="main-header">
-  <h1>🚚 Supply Chain Intelligence Hub</h1>
+  <h1>Supply Chain Intelligence Hub</h1>
   <p>Predicting Late Delivery Risk · Random Forest · XGBoost · Logistic Regression &nbsp;|&nbsp; {data_label}</p>
 </div>
 """, unsafe_allow_html=True)
